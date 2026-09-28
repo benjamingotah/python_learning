@@ -1,18 +1,19 @@
+import numpy as np
 
-maximum = 100
-minimum = 0
+picked_num = round(np.random.rand()*101)
+# print(picked_num) 
 
-chosenNumber = __import__('random').randint(0,100)
 
-guessedNumber = int(input('Input your guessed number: '))
+#loop conditions:
+while True:
+    guess_num = int(input("Guess a number between 1 to 100: "))
 
-if guessedNumber < 0 or guessedNumber > 100: 
-    print("Please chose a number between 0-100")
-
-    if guessedNumber < chosenNumber:
-        print("It is higher")
-    elif guessedNumber > chosenNumber:
-        print("It is lesser")
+    if guess_num < picked_num:
+        print(f"That's less! The number is greater than {guess_num}.")
+    elif guess_num > picked_num:
+        print(f"That's greater! The number is lesser than {guess_num}.")
     else:
-        print("You've chosen the right number")
+        print(f"Bingoooo! The number is {guess_num}.")
+        break
 
+    
